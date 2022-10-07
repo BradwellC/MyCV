@@ -1,0 +1,53 @@
+@use "./base" as base;
+@use "./colours" as color;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: base.$ff-main;
+  font-size: base.$fs-body;
+  font-weight: base.$fw-body;
+
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 70%;
+  height: auto;
+}
+
+h1 {
+  font-size: base.$fs-header_main;
+  font-weight: base.$fw-header;
+}
+
+h3 {
+  font-size: base.$fs-header_secondary;
+  font-weight: base.$fw-secondary;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 0;
+
+  & p span {
+    font-weight: 600;
+  }
+}
+
+.about_me {
+  width: 100%;
+  background-color: color.$grey-light-2;
+  padding: 3rem 0;
+
+  &-content {
+    padding: 1rem 1.2rem;
+  }
+}

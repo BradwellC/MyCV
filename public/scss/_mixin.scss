@@ -1,0 +1,15 @@
+@mixin view($point) {
+  @if $point==phablet {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (min-width: 889px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
