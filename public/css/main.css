@@ -12,7 +12,7 @@ body {
   font-size: 16px;
   font-weight: 300;
   width: 100%;
-  height: 100%;
+  background-color: #420264;
 }
 
 img {
@@ -28,12 +28,21 @@ h1 {
 h3 {
   font-size: 28px;
   font-weight: 400;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 1rem;
 }
 
 header {
   text-align: center;
   padding: 3rem 0;
   font-size: 14px;
+  color: #fff;
 }
 header p span {
   font-weight: 600;
@@ -46,4 +55,77 @@ header p span {
 }
 .about_me-content {
   padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.hobbies {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  background-color: #ccc;
+}
+.hobbies_content {
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.projects {
+  margin-top: 3rem;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  color: #fff;
+}
+.projects_content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.work_experience {
+  margin-top: 6rem;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  background-color: #5c038c;
+}
+.work_experience-title h3 {
+  color: #2998ff;
+  padding-bottom: 3rem;
+}
+
+.work_experience {
+  margin-top: 4rem;
+  padding: 2rem 1.2rem;
+}
+.work_experience h4 span {
+  font-weight: 600;
+}
+.work_experience-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.work_experience .card {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 7px 5px #777;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.work_experience .card_header {
+  border-bottom: 1px solid #f0eeee;
+}
+.work_experience .card_body {
+  padding: 1.4rem 15px 0;
+}
+.work_experience .card li {
+  padding-top: 15px;
+  list-style: none;
+}
+.work_experience .card li span {
+  font-weight: 600;
 }/*# sourceMappingURL=main.css.map */
