@@ -61,16 +61,17 @@ header p span {
 .hobbies {
   margin-top: 5rem;
   padding: 3rem 0;
-  background-color: #ccc;
+  background-color: #f4f2f2;
+  width: 100%;
 }
 .hobbies_content {
-  padding: 1rem 1.2rem;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
 .projects {
   margin-top: 3rem;
-  padding: 2rem 1.2rem;
+  padding: 2rem 0.7rem;
   text-align: center;
   color: #fff;
 }
@@ -82,19 +83,15 @@ header p span {
 }
 
 .work_experience {
-  margin-top: 6rem;
-  padding: 2rem 1.2rem;
+  margin: auto;
+  padding: 3rem 0 4rem;
+  width: 100%;
   text-align: center;
   background-color: #5c038c;
 }
 .work_experience-title h3 {
   color: #2998ff;
-  padding-bottom: 3rem;
-}
-
-.work_experience {
-  margin-top: 4rem;
-  padding: 2rem 1.2rem;
+  padding-bottom: 1rem;
 }
 .work_experience h4 span {
   font-weight: 600;
@@ -107,7 +104,7 @@ header p span {
   flex-direction: column;
 }
 .work_experience .card {
-  margin-top: 2rem;
+  margin: 2rem auto 0.5rem;
   padding: 2rem 0;
   background-color: #fff;
   border-radius: 15px;
@@ -115,6 +112,7 @@ header p span {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: 90%;
 }
 .work_experience .card_header {
   border-bottom: 1px solid #f0eeee;
@@ -128,4 +126,45 @@ header p span {
 }
 .work_experience .card li span {
   font-weight: 600;
+}
+
+.qualifications {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 446px) {
+  img {
+    width: 50%;
+    height: auto;
+  }
+  .about_me {
+    width: 90%;
+    margin-right: auto;
+    border-radius: 0 15px 15px 0;
+  }
+  .hobbies {
+    width: 90%;
+    margin-left: auto;
+    border-radius: 15px 0 0 15px;
+  }
+  .projects {
+    width: 85%;
+    margin: 3rem auto;
+  }
+  .work_experience .card {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 690px) {
+  .about_me {
+    width: 75%;
+    margin-right: auto;
+    border-radius: 0 15px 15px 0;
+  }
+  .hobbies {
+    width: 75%;
+    margin-left: auto;
+    border-radius: 15px 0 0 15px;
+  }
 }/*# sourceMappingURL=main.css.map */
