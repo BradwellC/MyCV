@@ -12,159 +12,115 @@ body {
   font-size: 16px;
   font-weight: 300;
   width: 100%;
-  background-color: #420264;
+  background-color: #242424;
+  color: #fff;
 }
 
-img {
-  width: 70%;
+.underline {
+  border-bottom: 3px solid #4ee1a0;
+}
+
+.heading-l {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 50px;
+  font-family: "Nunito";
+  letter-spacing: 1px;
+}
+
+.container_header {
+  --max-width: 1100px;
+  --side-padding: 2rem;
+  width: min(var(--max-width), 100% - var(--side-padding) * 2);
+  margin-inline: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 3px solid #4ee1a0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 400;
+}
+.navbar_brand {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.navbar_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar_toggle {
+  display: none;
+}
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+.navbar_item {
+  padding: 0 1rem;
+  list-style: none;
+}
+.navbar_link {
+  text-decoration: none;
+  color: #a45ee5;
+}
+.navbar_link:hover {
+  color: #fff;
+}
+
+.header {
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.header_content {
+  padding: 1rem;
+  align-items: center;
+}
+.header_content p {
+  padding-top: 1.5rem;
+}
+.header-img {
+  width: 400px;
   height: auto;
 }
 
-h1 {
-  font-size: 40px;
-  font-weight: 600;
+.container_hobbies {
+  --max-width: 1000px;
+  --side-padding: 2rem;
+  width: min(var(--max-width), 100% - var(--side-padding) * 2);
+  margin-inline: auto;
+  padding-top: 4.5rem;
 }
 
-h3 {
-  font-size: 28px;
-  font-weight: 400;
-  font-weight: 600;
-  padding-bottom: 1rem;
+.container_projects {
+  --max-width: 1000px;
+  --side-padding: 2rem;
+  width: min(var(--max-width), 100% - var(--side-padding) * 2);
+  margin-inline: auto;
+  padding-top: 2.5rem;
 }
 
-h4 {
-  font-size: 18px;
-  font-weight: 400;
-  padding-bottom: 1rem;
-}
-
-header {
+.projects_header {
   text-align: center;
-  padding: 3rem 0;
-  font-size: 14px;
-  color: #fff;
-}
-header p span {
-  font-weight: 600;
+  padding-top: 3rem;
 }
 
-.about_me {
-  width: 100%;
-  background-color: #f4f2f2;
-  padding: 3rem 0;
-}
-.about_me-content {
-  padding: 1rem 1.2rem;
-  text-align: center;
-}
-
-.hobbies {
-  margin-top: 5rem;
-  padding: 3rem 0;
-  background-color: #f4f2f2;
-  width: 100%;
-}
-.hobbies_content {
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
-.projects {
-  margin-top: 3rem;
-  padding: 2rem 0.7rem;
-  text-align: center;
-  color: #fff;
-}
-.projects_content {
+.projects_grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-}
-
-.work_experience {
-  margin: auto;
-  padding: 3rem 0 4rem;
-  width: 100%;
-  text-align: center;
-  background-color: #5c038c;
-}
-.work_experience-title h3 {
-  color: #2998ff;
-  padding-bottom: 1rem;
-}
-.work_experience h4 span {
-  font-weight: 600;
-}
-.work_experience-content {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-}
-.work_experience .card {
-  margin: 2rem auto 0.5rem;
-  padding: 2rem 0;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 5px 7px 5px #777;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 90%;
-}
-.work_experience .card_header {
-  border-bottom: 1px solid #f0eeee;
-}
-.work_experience .card_body {
-  padding: 1.4rem 15px 0;
-}
-.work_experience .card li {
-  padding-top: 15px;
-  list-style: none;
-}
-.work_experience .card li span {
-  font-weight: 600;
-}
-
-.qualifications {
-  padding-top: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 20px;
   text-align: center;
 }
-
-@media screen and (min-width: 446px) {
-  img {
-    width: 50%;
-    height: auto;
-  }
-  .about_me {
-    width: 90%;
-    margin-right: auto;
-    border-radius: 0 15px 15px 0;
-  }
-  .hobbies {
-    width: 90%;
-    margin-left: auto;
-    border-radius: 15px 0 0 15px;
-  }
-  .projects {
-    width: 85%;
-    margin: 3rem auto;
-  }
-  .work_experience .card {
-    width: 85%;
-  }
-}
-@media screen and (min-width: 690px) {
-  .about_me {
-    width: 75%;
-    margin-right: auto;
-    border-radius: 0 15px 15px 0;
-  }
-  .hobbies {
-    width: 75%;
-    margin-left: auto;
-    border-radius: 15px 0 0 15px;
-  }
+.projects_grid img {
+  width: 450px;
 }/*# sourceMappingURL=main.css.map */

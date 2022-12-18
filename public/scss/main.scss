@@ -16,187 +16,144 @@ body {
 
   width: 100%;
 
-  background-color: color.$indigo;
+  background-color: color.$grey-light-1;
+  color: color.$white;
 }
 
-img {
-  width: 70%;
-  height: auto;
+.underline {
+  border-bottom: 3px solid #4ee1a0;
 }
 
-h1 {
-  font-size: base.$fs-header_main;
-  font-weight: base.$fw-header;
-}
-
-h3 {
-  font-size: base.$fs-header_secondary;
-  font-weight: base.$fw-secondary;
-
+.heading-l {
+  font-size: 50px;
   font-weight: 600;
-  padding-bottom: 1rem;
+  line-height: 50px;
+
+  font-family: base.$ff-main;
+  letter-spacing: 1px;
 }
 
-h4 {
-  font-size: base.$fs-header4;
-  font-weight: base.$fw-secondary;
+// Header
+.container_header {
+  --max-width: 1100px;
+  --side-padding: 2rem;
 
-  padding-bottom: 1rem;
+  width: min(var(--max-width), 100% - (var(--side-padding) * 2));
+  margin-inline: auto;
+
+  padding-top: 2.5rem;
+
+  padding-bottom: 4rem;
+  border-bottom: 3px solid #4ee1a0;
 }
 
-header {
-  text-align: center;
-  padding: 3rem 0;
+// Navbar
+.navbar {
+  display: flex;
+  flex-direction: row;
 
-  font-size: 14px;
-  color: color.$white;
+  justify-content: space-between;
 
-  & p span {
+  z-index: 400;
+
+  &_brand {
+    font-size: 20px;
     font-weight: 600;
-  }
-}
 
-.about_me {
-  width: 100%;
-  background-color: color.$grey-light-2;
-  padding: 3rem 0;
-
-  &-content {
-    padding: 1rem 1.2rem;
-    text-align: center;
-  }
-}
-
-.hobbies {
-  margin-top: 5rem;
-  padding: 3rem 0;
-  background-color: color.$grey-light-2;
-
-  width: 100%;
-
-  &_content {
-    padding: 1rem 2rem;
-    text-align: center;
-  }
-}
-
-.projects {
-  margin-top: 3rem;
-  padding: 2rem 0.7rem;
-
-  text-align: center;
-  color: color.$white;
-
-  &_content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    gap: 20px;
-  }
-}
-
-.work_experience {
-  margin: auto;
-  padding: 3rem 0 4rem;
-  width: 100%;
-
-  text-align: center;
-  background-color: color.$violet;
-
-  &-title h3 {
-    color: color.$blue-light;
-    padding-bottom: 1rem;
+    text-transform: uppercase;
   }
 
-  & h4 span {
-    font-weight: 600;
-  }
-
-  &-content {
-    height: fit-content;
-
+  &_header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    justify-content: space-between;
   }
 
-  & .card {
-    margin: 2rem auto 0.5rem;
-    padding: 2rem 0;
-    background-color: color.$white;
+  &_toggle {
+    display: none;
+  }
 
-    border-radius: 15px;
-    box-shadow: 5px 7px 5px color.$grey-dark;
+  & ul {
+    display: flex;
+    flex-direction: row;
+  }
 
-    height: fit-content;
-    width: 90%;
+  &_item {
+    padding: 0 1rem;
+    list-style: none;
+  }
 
-    &_header {
-      border-bottom: 1px solid color.$grey-light-3;
-    }
+  &_link {
+    text-decoration: none;
+    color: color.$amethyst;
 
-    &_body {
-      padding: 1.4rem 15px 0;
-    }
-
-    & li {
-      padding-top: 15px;
-      list-style: none;
-
-      & span {
-        font-weight: 600;
-      }
+    &:hover {
+      color: color.$white;
     }
   }
 }
 
-.qualifications {
-  padding-top: 5rem;
-  text-align: center;
-}
+// Header Content
+.header {
+  padding-top: 4rem;
 
-@media screen and (min-width: 446px) {
-  img {
-    width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  column-gap: 50px;
+
+  &_content {
+    padding: 1rem;
+    align-items: center;
+
+    & p {
+      padding-top: 1.5rem;
+    }
+  }
+
+  &-img {
+    width: 400px;
     height: auto;
   }
-
-  .about_me {
-    width: 90%;
-    margin-right: auto;
-
-    border-radius: 0 15px 15px 0;
-  }
-
-  .hobbies {
-    width: 90%;
-    margin-left: auto;
-
-    border-radius: 15px 0 0 15px;
-  }
-
-  .projects {
-    width: 85%;
-    margin: 3rem auto;
-  }
-
-  .work_experience .card {
-    width: 85%;
-  }
 }
 
-@media screen and (min-width: 690px) {
-  .about_me {
-    width: 75%;
-    margin-right: auto;
+// Hobbies
+.container_hobbies {
+  --max-width: 1000px;
+  --side-padding: 2rem;
 
-    border-radius: 0 15px 15px 0;
-  }
+  width: min(var(--max-width), 100% - (var(--side-padding) * 2));
+  margin-inline: auto;
 
-  .hobbies {
-    width: 75%;
-    margin-left: auto;
+  padding-top: 4.5rem;
+}
 
-    border-radius: 15px 0 0 15px;
+// Projects
+.container_projects {
+  --max-width: 1000px;
+  --side-padding: 2rem;
+
+  width: min(var(--max-width), 100% - (var(--side-padding) * 2));
+  margin-inline: auto;
+
+  padding-top: 2.5rem;
+}
+
+.projects_header {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.projects_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  column-gap: 30px;
+  row-gap: 20px;
+
+  text-align: center;
+
+  & img {
+    width: 450px;
   }
 }

@@ -6,35 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyVirtualCV</title>
 
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/img/favicon-32x32.png"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/00645e87e4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./public/css/main.css" />
   </head>
   <body>
     <header>
-      <img src="./public/img/mycv_logo.PNG" alt="" />
-      <p><span>Name:</span> Christopher Bradwell</p>
-      <p><span>DOB:</span> 9th Ocotber</p>
-      <p><span>Job:</span> Marketing Automation Executive</p>
-    </header>
-    <nav class="nav">
-      <div class="nav-header"></div>
-    </nav>
-    <main>
-      <section class="about_me">
-        <div class="about_me-content">
-          <h3><span>Hi, </span> my name is Chris</h3>
-          <p>
-            Hardworking, punctual, independent and reliable worker with over 3
-            years demonstrable history working both independently and within a
-            teams for a Multinational Company. I am a fast learner and have
-            obtained many skills and qualifications to improve my knowledge and
-            expand on the experience already gained.
-          </p>
-        </div>
-      </section>
+      <div class="container_header">
+        <nav class="navbar">
+          <div class="navbar_header">
+            <p class="navbar_brand">ChrisBradwell</p>
+            <div class="navbar_toggle">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+          <ul>
+            <li class="navbar_item">
+              <a class="navbar_link" href="#"
+                ><i class="fa-solid fa-house-user"></i
+              ></a>
+            </li>
+            <li class="navbar_item">
+              <a class="navbar_link" href="#"
+                ><i class="fa-regular fa-folder-open"></i
+              ></a>
+            </li>
+            <li class="navbar_item">
+              <a class="navbar_link" href="#"
+                ><i class="fa-regular fa-window-restore"></i
+              ></a>
+            </li>
+            <li class="navbar_item">
+              <a class="navbar_link" href="#"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
 
-      <section class="hobbies">
-        <div class="hobbies_content">
-          <h3>Hobbies & Interests</h3>
+        <div class="header">
+          <div class="header_content">
+            <h1 class="heading-l">Nice to meet you!</h1>
+            <p>
+              Based in the UK. Working as a Marketing Automation Executive;
+              working with Eloqua, Marketo & Campaign Monitor. Been learning
+              programming for the last 1-2 years in my spare time.
+            </p>
+          </div>
+          <div class="header_img">
+            <img
+              class="header-img"
+              src="./public/img/1114E7F8-F952-477F-A7E5-1684221D8184.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container_hobbies">
+          <h2>Hobbies & Interests</h2>
           <p>
             Over the years I have found lots of new hobbies with the most recent
             one being coding and learning lots of different coding languages. My
@@ -46,25 +92,41 @@
         </div>
       </section>
 
-      <section class="projects">
-        <div class="projects_header">
-          <h3>My Projects</h3>
-        </div>
+      <section>
+        <div class="container_projects">
+          <div class="projects_header">
+            <h2>My Projects</h2>
+          </div>
 
-        <div class="projects_content">
-          <p>
-            Over the last year i have been learning to code within my free time
-            by teaching myself or taking courses from udemy. I am currently
-            going through all the courses and updating the styling to match this
-            webiste. The courses i have taken involve Node.js, PHP, React, CSS
-            and JS.
-          </p>
-          <p>
-            To go long with building the projects i have built this webiste and
-            the css template currently being used on here and server landing
-            page ive built as well. I decided to build the css template as a way
-            of learning more about css and it would be great training for me.
-          </p>
+          <div class="projects_grid">
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+              <div class="projects_cta"></div>
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+            <div class="projects_grid-1">
+              <a href="https://bradwellc.github.io/FEM_Time-tracking-dasboard/"
+                ><img src="./public/img/single-page-2.png" alt=""
+              /></a>
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+            <div class="projects_grid-1">
+              <img src="./public/img/single-page-2.png" alt="" />
+            </div>
+          </div>
         </div>
       </section>
 
