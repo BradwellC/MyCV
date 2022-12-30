@@ -1,3 +1,24 @@
+@use "./colours" as color;
+
+@mixin maxWidth {
+  width: 1200px;
+  max-width: 100%;
+
+  margin-inline: auto;
+}
+
+@mixin containerUnderline {
+  border-bottom: 4px solid color.$iris;
+}
+
+@mixin sectionUnderline {
+  border-bottom: 3px solid color.$iris;
+}
+
+@mixin textUnderline {
+  border-bottom: 2px solid color.$iris;
+}
+
 @mixin view($point) {
   @if $point==phablet {
     @media (min-width: 600px) {
