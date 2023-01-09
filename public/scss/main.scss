@@ -2,366 +2,188 @@
 @use "./colours" as color;
 @use "./mixin" as mixin;
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "./config";
 
-body {
-  font-family: base.$ff-main;
-
-  background-color: color.$grey-light-1;
-  color: #fff;
-
-  width: 100%;
-}
-
-li {
-  list-style: none;
-}
-
-.heading-l {
-  font-size: 78px;
-  font-weight: 700;
-
-  line-height: 78px;
-
-  padding-bottom: 2rem;
-}
-
-.heading-m {
-  font-size: 48px;
-  font-weight: 500;
-}
-
-.heading-s {
-  font-size: 38px;
-  font-weight: 300;
-
-  line-height: 32px;
-}
-
-.body-m {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-span {
-  color: color.$iris;
-  // font-size: 18px;
-  font-weight: 700;
-}
-
-.pb-1 {
-  padding-bottom: 1rem;
-}
-
-.pb-2 {
-  padding-bottom: 2rem;
-}
-
-.btn {
-  text-decoration: none;
-  font-weight: 500;
-
-  transition: all 0.3s;
-
-  &:hover {
-    color: color.$white;
-    border-bottom: 2px solid color.$iris;
+.container_grid {
+  @include mixin.screen(desktop) {
+    @include mixin.column(150px, 4fr, 30px, 0);
   }
+
+  @include mixin.screen(laptop) {
+    @include mixin.column(150px, 4fr, 15px, 0);
+  }
+
+  background-color: color.$dark_blue-1;
+}
+
+.grid_nav {
+  @include mixin.screen(desktop) {
+    grid-column: 1 / 2;
+    // background-color: color.$black;
+    width: 120px;
+    @include mixin.abs-position(fixed, 3rem, 0, 0, 0);
+  }
+}
+
+.grid_main {
+  grid-column: 2 / 3;
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  overflow-y: auto;
+
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  row-gap: 50px;
 }
 
 // Navbar
 .navbar {
-  display: flex;
-  flex-flow: row;
+  padding: 4rem 1rem;
 
-  justify-content: space-between;
-  align-items: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 
-  padding: 2rem 2rem 0;
+  background-color: color.$dark_blue-2;
 
-  &_header {
-    display: flex;
-    flex-direction: row;
+  @include mixin.flex-column();
 
-    align-items: center;
-
-    & p {
-      font-size: 20px;
-      font-weight: 500;
-    }
-  }
+  height: 85vh;
 
   &_brand {
-    width: 70px;
-    padding-right: 20px;
+    width: 80px;
+    margin-inline: auto;
   }
 
   &_nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    padding-top: 2rem;
   }
 
   &_item {
-    padding: 0 10px;
-  }
-
-  &_link {
-    text-decoration: none;
-    color: color.$iris;
-
-    font-weight: 300;
-
-    &:hover {
-      color: color.$white;
-      @include mixin.textUnderline;
-      padding-bottom: 5px;
-    }
-  }
-
-  &_toggle {
-    display: none;
-  }
-}
-// Main CSS
-
-.container_main {
-  @include mixin.maxWidth;
-}
-
-.container_header {
-  display: grid;
-  grid-template-columns: auto auto;
-
-  column-gap: 3rem;
-
-  padding-top: 1.5rem;
-  padding-bottom: 4rem;
-
-  @include mixin.containerUnderline;
-}
-
-.header_content {
-  padding-top: 5rem;
-
-  text-align: center;
-}
-
-.container_projects {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-
-  @include mixin.containerUnderline;
-  text-align: center;
-}
-
-.projects_header {
-  padding-bottom: 2.5rem;
-  width: 70%;
-
-  margin-inline: auto;
-  @include mixin.sectionUnderline;
-}
-
-.projects_grid {
-  padding-top: 4rem;
-
-  display: grid;
-  grid-template-columns: repeat(4, 280px);
-
-  column-gap: 20px;
-  row-gap: 20px;
-
-  &-1 {
-    & img {
-      width: 280px;
-    }
-  }
-}
-
-.projects_cta {
-  width: 200px;
-  margin-inline: auto;
-
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-}
-
-.container_work {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-
-  @include mixin.containerUnderline;
-}
-
-.work_experience {
-  width: 90%;
-  margin-inline: auto;
-
-  &-title {
     text-align: center;
     padding-bottom: 1rem;
   }
 
-  & h3 {
-    text-align: center;
+  &_link {
+    color: color.$purple;
+
+    font-size: 19px;
+    font-family: base.$ff-headings;
+
+    transition: all .3s;
+
+    &:hover {
+      color: color.$white;
+
+      padding-bottom: 5px;
+      border-bottom: 3px solid color.$purple;
+    }
   }
 }
 
-.work {
+.container_header {
+  @include mixin.screen(desktop) {
+    padding: 4rem 0;
+
+    margin-inline: auto;
+
+    @include mixin.column(600px, 400px, 30px, 0);
+
+    align-items: center;
+
+    @include mixin.border-bottom(2px);
+  }
+}
+
+.header-img {
+  width: 400px;
+}
+
+.container_projects {
+  @include mixin.flex-column();
+
+  padding-bottom: 4rem;
+
+  margin-inline: auto;
+
+  @include mixin.border-bottom(2px);
+}
+
+.projects_header {
+  text-align: center;
   padding-bottom: 2rem;
 
-  & ul {
-    padding-left: 2rem;
-  }
-}
-
-// Education
-.container_education {
-  width: 70%;
-  margin-inline: auto;
-
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-
-  @include mixin.containerUnderline;
-
-  & h2 {
-    text-align: center;
-  }
-}
-
-.education_1 {
-  padding-bottom: 1rem;
-  &-title h3 {
-    font-size: 25px;
-  }
-
-  &-grade {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    font-size: 20px;
-  }
-}
-
-.education_2 {
-  padding-bottom: 1rem;
-  &-title h3 {
-    font-size: 25px;
-  }
-
-  &-grade {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    font-size: 20px;
-  }
-}
-
-.education_3 {
-  padding-bottom: 1rem;
-  &-title h3 {
-    font-size: 25px;
-  }
-
-  &-grade {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    font-size: 20px;
-  }
-}
-
-.education_4 {
-  padding-bottom: 1rem;
-  &-title h3 {
-    font-size: 25px;
-  }
-
-  &-grade {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    font-size: 20px;
-  }
-}
-
-// Hobbies
-.container_hobbies {
-  padding-top: 2.5rem;
-  padding-bottom: 4rem;
-
-  text-align: center;
-  width: 90%;
+  width: 60%;
   margin-inline: auto;
 }
 
-footer {
-  background-color: color.$black;
+.projects_grid {
+  @include mixin.screen(desktop) {
+    @include mixin.grid-col(4, 250px, 30px, 30px);
+  }
+
+  @include mixin.screen(laptop) {
+    @include mixin.grid-col(2, 450px, 30px, 30px);
+  }
 }
 
-// Contact
-.container_contact {
-  width: 80%;
-  margin-inline: auto;
-
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 4rem;
-
-  padding: 4rem 0 3rem;
-  border-bottom: 1px solid color.$iris;
+.projects_img {
+  width: 240px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-
-  width: 600px;
-}
-
-.form-group {
-  padding: 1rem 0;
-}
-
-.form-control {
-  background: transparent;
-  border: none;
-  height: 30px;
-
-  color: color.$iris;
-  padding: 15px 35px;
-
-  border-bottom: 1px solid color.$iris;
-}
-
-.container_footer {
-  padding-top: 2.5rem;
-  padding-bottom: 1.5rem;
-
-  width: 90%;
-  margin-inline: auto;
+.projects_cta {
+  width: 240px;
 
   display: flex;
   flex-direction: row;
 
   justify-content: space-between;
 
-  font-size: 20px;
+  padding: 0 20px;
+}
+
+.container_work {
+  width: 1000px;
+  margin-inline: auto;
+
+  padding: 2rem 0 4rem;
+
+  @include mixin.border-bottom(2px);
+}
+
+.work ul {
+  padding-left: 2rem;
+}
+
+.container_education {
+  width: 70%;
+  margin-inline: auto;
+
+  padding: 2rem 0 4rem;
+
+  @include mixin.border-bottom(2px);
+}
+
+.education_1-grade {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.education_2-grade {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.education_3-grade {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
 }

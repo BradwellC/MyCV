@@ -1,35 +1,110 @@
 @use "./colours" as color;
+@use "./base" as base;
 
-@mixin maxWidth {
-  width: 1200px;
-  max-width: 100%;
+@mixin width($width) {
+  --max-width: 900px;
+  --side-padding: 1rem;
 
+  width: min(var(--max-width), 100% - (var(--side-padding) * 2));
   margin-inline: auto;
 }
 
-@mixin containerUnderline {
-  border-bottom: 4px solid color.$iris;
+@mixin abs-position($pos, $top, $right, $bottom, $left) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
-@mixin sectionUnderline {
-  border-bottom: 3px solid color.$iris;
+@mixin grid-col($num, $width, $col, $row) {
+  display: grid;
+  grid-template-columns: repeat($num, $width);
+
+  column-gap: $col;
+  row-gap: $row;
 }
 
-@mixin textUnderline {
-  border-bottom: 2px solid color.$iris;
+@mixin column($num1, $num2, $col, $row) {
+  display: grid;
+  grid-template-columns: $num1 $num2;
+
+  column-gap: $col;
+  row-gap: $row;
 }
 
-@mixin view($point) {
-  @if $point==phablet {
-    @media (min-width: 600px) {
+@mixin headings($size, $weight, $padding) {
+  font-size: $size;
+  font-weight: $weight;
+  padding-bottom: $padding;
+
+  font-family: base.$ff-headings;
+}
+
+@mixin border-bottom($size) {
+  border-bottom: $size solid color.$purple;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; /* stops bg color from leaking outside the border: */
+}
+
+@mixin screen($size) {
+  $desktop: "(min-width: 1025px)";
+  $laptop: "(min-width: 769px) and (max-width: 1024)";
+  $tablet: "(min-width: 481px) and (max-width: 768px)";
+  $mobile: "(min-width: 320px) and (max-width: 480px)";
+  @if $size == desktop {
+    @media #{$desktop} {
       @content;
     }
-  } @else if $point==tablet {
-    @media (min-width: 889px) {
+  } @else if $size == laptop {
+    @media #{$laptop} {
       @content;
     }
-  } @else if $point==desktop {
-    @media (min-width: 1200px) {
+  } @else if $size == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media #{$mobile} {
       @content;
     }
   }
