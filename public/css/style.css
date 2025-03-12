@@ -1,0 +1,192 @@
+:root {
+  --clr-background: #24273a;
+  --clr-text: #ffffff;
+  --clr-border: #f0c6c6;
+  --clr-overlay: #181926;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Base Styling */
+
+body {
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+}
+
+main {
+  margin-left: 360px
+}
+
+
+/* Sidenav Styling */
+.sidenav {
+  height: 100vh;
+  width: 360px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: #1e1e2e;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.sidenav-title {
+  rotate: 270deg;
+  white-space: nowrap;
+}
+
+.sidenav-title h1 {
+  font-size: 65px;
+
+}
+
+/* Navbar Styling */
+
+
+
+/* Skills Styling */
+
+.skills {
+  padding-block-start: 2rem;
+}
+
+.skills h2 {
+  text-align: center;
+  border-bottom: 2px solid #fff;
+
+  padding-bottom: 2rem;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  row-gap: 30px;
+  column-gap: 20px;
+
+  width: 800px;
+  margin-inline: auto;
+}
+
+.skill {
+  border-left: 6px solid #f0c6c6;
+
+  padding: 10px 15px;
+
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+/* Career Section Styling */
+.career {
+  padding-block-start: 2rem;
+
+}
+
+.career h2 {
+  text-align: center;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+  padding: 1.5rem 0;
+}
+
+.career-container {
+  width: 700px;
+  margin-inline: auto;
+}
+
+.qualifications {
+  width: 65%;
+  height: 500px;
+  padding-top: 150px;
+  margin-inline: auto;
+}
+
+.qualification {
+  font-size: 15px;
+  list-style: none;
+}
+
+.qualification span {
+  font-weight: bold;
+  font-size: 17px;
+}
